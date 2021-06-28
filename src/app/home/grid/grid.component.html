@@ -1,0 +1,38 @@
+<div infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+
+    <mat-card class="card">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>
+                    Search & Sort
+                </h2>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <section>
+                <mat-checkbox (change)="sortResult($event,'name')">sort by name</mat-checkbox>
+            </section>
+
+            <mat-form-field>
+                <mat-label>Search</mat-label>
+                <input matInput (keyup)="search($event)" placeholder="Type your search" #input>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+
+
+
+    <div class="row">
+        <div class="col-md-12" *ngFor="let data of paginator.items; index as i;">
+            <app-data [data]="data" [index]="i"></app-data>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="paginator.items.length < 1">
+    No result
+</div>
+
+<app-scroll-top></app-scroll-top>
