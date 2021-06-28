@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button *ngIf="userIsLoggedIn" (click)="goHome()" mat-icon-button aria-label="go home button">
+            <mat-icon>home</mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <div class="navbar-title">Wizzcad test</div>
+        <span class="spacer"></span>
+
+        <mat-slide-toggle *ngIf="isHomePage" (change)="changeViewMode($event)"></mat-slide-toggle>
+
+        <button *ngIf="userIsLoggedIn" (click)="logout()" mat-icon-button aria-label="logout button">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,1 @@
+export { fadeInAnimation } from './fadeIn.animation'
