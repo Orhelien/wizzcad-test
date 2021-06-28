@@ -1,0 +1,22 @@
+<mat-card class="card" [@fadeInAnimation]='state'>
+    <mat-card-header>
+        <mat-card-title>
+            <h2>
+                [{{index}}] {{ _data.name }}
+            </h2>
+        </mat-card-title>
+
+        <mat-card-subtitle>
+            <p>
+                createdAt : {{ _data.createdAt | date: 'dd/MM/yyyy hh:mm'}}<br />
+                createdById :{{ _data.createdById }}<br />
+                id : {{ _data.id }}<br />
+                global: {{ _data.global }}
+            </p>
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-actions>
+        <button mat-raised-button (click)="showOne(_data.id)">Show</button>
+    </mat-card-actions>
+</mat-card>

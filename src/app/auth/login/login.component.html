@@ -1,0 +1,13 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let user of userList">
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>{{user.login}}</mat-card-title>
+                <mat-card-subtitle>{{user.password}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+                <button mat-raised-button (click)="connect(user)">CONNECT</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
